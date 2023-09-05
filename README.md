@@ -35,4 +35,4 @@ All rights reserved.
 
 The HTML template CC BY 3.0 made with :heart: by [Colorlib](https://colorlib.com)
 
-Included stylesheets, JavaScript, and fonts licensed as MIT
+Included stylesheets, JavaScript, and fonts licensed as MIT and SIL Open Font License
