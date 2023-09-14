@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
   <title>Základy numerické matematiky</title>
@@ -112,42 +112,210 @@
         </div>
         <!-- /section title -->
 
-        <div class="col-md-10 col-md-offset-2 text-left">
-
-          <h3 class="event-title"><span style="color: #dd0a37;">Přednášky</span></h3>
-          <div class="about-content">
-            <p><mark>středa 9:00&ndash;10:30 (K1), čtvrtek 17:20&ndash;18:50 (K1)</mark></p>
-            <p>Do 16.11. přednáší doc. Hnětynková ("lineárně-algebraická" část kurzu), od 22.11. doc. Kučera ("analýznická" část).</p>
-          </div>
+        <!-- column -->
+        <div class="col-md-10 col-md-offset-1 text-justify">
 
           <!-- about content -->
-          <h3 class="event-title"><span style="color: #dd0a37;">Cvičení </span></h3>
-          <div class="speaker-event">
-            <p> <mark>pondělí 12:20&ndash;13:50 (K4)</mark> (Monika Balázsová)</p>
-            <p> <mark>pondělí 14:00&ndash;15:30 (K4)</mark> (Monika Balázsová)</p>
-            <p> <mark>úterý 14:00&ndash;15:30 (K4)</mark> (Jan Papež)</p>
-            <p> <mark>pátek 12:20&ndash;13:50 (K4)</mark> (Jan Blechta)</p>
-            <p> <mark>pátek 14:00&ndash;15:30 (K4)</mark> (Jan Blechta)</p>
-            <p>Detailní informace o cvičeních poskytnou jednotliví cvičící, viz též záložka "Přednášející".
-               Zápočet bude udělován za průběžné domácí úkoly a aktivní účast na cvičeních.</p>
+          <h3 class="event-title"><span style="color: #dd0a37;">Přednášky</span></h3>
+          <div class="about-content">
+            <p><mark>středa 9:00&ndash;10:30 (K1), čtvrtek 17:20&ndash;18:50 (K1)</mark>
+              (týden 1&ndash;7: <a href="#schedule">Iveta Hnětynková</a>,
+              týden 8&ndash;14: <a href="#schedule">Václav Kučera</a>)
+            </p>
           </div>
           <!-- /about content -->
 
           <!-- about content -->
-          <h3 class="event-title"><span style="color: #dd0a37;">Poznámky </span></h3>
+          <h3 class="event-title"><span style="color: #dd0a37;">Cvičení </span></h3>
+          <div class="speaker-event">
+            <p> <mark>pondělí 12:20&ndash;13:50 (K4)</mark> <a href="#schedule">(Monika Balázsová)</a></p>
+            <p> <mark>pondělí 14:00&ndash;15:30 (K4)</mark> <a href="#schedule">(Monika Balázsová)</a></p>
+            <p> <mark>úterý 14:00&ndash;15:30 (K4)</mark> <a href="#schedule">(Jan Papež)</a></p>
+            <p> <mark>pátek 12:20&ndash;13:50 (K4)</mark> <a href="#schedule">(Jan Blechta)</a></p>
+            <p> <mark>pátek 14:00&ndash;15:30 (K4)</mark> <a href="#schedule">(Jan Blechta)</a></p>
+          </div>
+          <!-- /about content -->
+
+          <div id="delayed-exercise-content" style="display: none;">
+            <div class="text-justify">
+              Páteční cvičení se 17. listopadu nekonají a tedy jsou
+              v týdnech 8&ndash;13 spožděna o jeden týden. Agenda týdne
+              N se tedy na pátečních cvičeních cvičí v týdnu N&plus;1 pro 7&le;N&le;12.
+            </div>
+          </div>
+
+          <!-- about content -->
+          <h3 class="event-title"><span style="color: #dd0a37;">Plán semestru</span></h3>
+          <div class="speaker-event table-responsive">
+            <table class="table table-condensed table-hover table-striped">
+              <thead>
+                <tr>
+                  <th>Týden</th>
+                  <th>Téma přednášky</th>
+                  <th>Téma cvičení</th>
+                  <th>Soubory</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1 (od 2.10.)</td>
+                  <td>
+                    st: Úvod
+                    <br/>
+                    čt: Chyby, odhady, floating point aritmetika
+                  </td>
+                  <td>Opakování, maticové normy</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>2 (od 9.10.)</th>
+                  <td>
+                    st: Schurův rozklad
+                    <br/>
+                    čt: QR rozklad I (Givens, Householder)
+                  </td>
+                  <td>Úvod do Matlabu</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>3 (od 16.10.)</th>
+                  <td>
+                    st: QR rozklad II (Gram&ndash;Schmidt)
+                    <br/>
+                    čt: QR rozklad III (analýza stability)
+                  </td>
+                  <td>Implementace prvních algoritmů</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>4 (od 23.10.)</td>
+                  <td>
+                    st: Nejmenší čtverce I
+                    <br/>
+                    čt: Nejmenší čtverce II
+                  </td>
+                  <td>QR rozklad</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>5 (od 30.10.) <br/><s>čt</s></td>
+                  <td>
+                    st: Algoritmy vlastních problémů I
+                    <br/>
+                    <s>čt</s></td>
+                  <td>Nejmenší čtverce</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>6 (od 6.11.)</td>
+                  <td>
+                    st: Algoritmy vlastních problémů II
+                    <br/>
+                    čt: Algoritmy vlastních problémů III
+                  </td>
+                  <td>Algoritmy vlastních problémů I</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>7 (od 13.11.) <br/><s>pá</s></td>
+                  <td>
+                    st: Soustavy lineárních rovnic I
+                    <br/>
+                    čt: Soustavy lineárních rovnic II
+                  </td>
+                  <td class="danger delayed-exercise">Algoritmy vlastních problémů II</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>8 (od 20.11.)</td>
+                  <td>
+                    st: Nelineární algebraické rovnice
+                    <br/>
+                    čt: Pevný bod
+                  </td>
+                  <td class="danger delayed-exercise">Metody Krylovových podprostorů</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>9 (od 27.11.)</td>
+                  <td>
+                    st: Optimalizace
+                    <br/>
+                    čt: Ortogonální polynomy
+                  </td>
+                  <td class="danger delayed-exercise">Nelineární algebraické rovnice</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>10 (od 4.12.)</td>
+                  <td>
+                    st: Interpolace
+                    <br/>
+                    čt: Spline
+                  </td>
+                  <td class="danger delayed-exercise">Optimalizace, ortogonální polynomy</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>11 (od 11.12.)</td>
+                  <td>
+                    st: Kvadratura I
+                    <br/>
+                    čt: Kvadratura II
+                  </td>
+                  <td class="danger delayed-exercise">Interpolace</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>12 (od 18.12.)</td>
+                  <td>
+                    st: Jednokrokové metody ODR I
+                    <br/>
+                    čt: Jednokrokové metody ODR II
+                  </td>
+                  <td class="danger delayed-exercise">Kvadratura</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>13 (od 1.1.) <br/><s>po</s>, <s>út</s></td>
+                  <td>
+                    st: Vícekrokové metody ODR I
+                    <br/>
+                    čt: Vícekrokové metody ODR II
+                  </td>
+                  <td class="danger delayed-exercise"></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>14 (od 8.1.)</td>
+                  <td>
+                    st: Další metody ODR
+                    <br/>
+                    čt: Závěr
+                  </td>
+                  <td>Numerické metody ODR</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <!-- /about content -->
+
+          <!-- about content -->
+          <h3 class="event-title"><span style="color: #dd0a37;">Zápočet a zkouška</span></h3>
           <div class="speaker-event">
             <p>Studenti předmětu <strong>Základy numerické lineární algebry</strong> (NMMB203)
-               absolvují pouze první půlku semestru, kterou přednáší doc. Hnětynková.</p>
+               absolvují pouze první půlku semestru, kterou přednáší <a href="#schedule">Iveta Hnětynková</a>.</p>
             <p><strong>Požadavky k zápočtu</strong>.
                Pro získání zápočtu je třeba splnit obě následující podmínky:</p>
             <p><strong>1. Aktivní účast na nejméně 9 cvičeních.</strong>
-            <p><strong>2. Řešení domácích úkolů: </strong>
+            <p><strong>2. Řešení domácích úkolů.</strong>
                Na cvičeních studenti dostanou postupně 5 úkolů, které řeší doma ve skupinách nejvýše po třech.
                Skupiny je možné tvořit pouze ze studentů navštěvujících cvičení stejného cvíčícího.
                Na vypracování poté mají jeden týden a řešení odevzdají elektronicky či na papíře cvičícímu.
                Za každý úkol mohou studenti získat 0 až 6 bodů.
                K udělení zápočtu je třeba získat alespoň dvě třetiny z celkového počtu bodů, tedy 20.</p>
-            <p><strong>Požadavky ke zkoušce</strong>.
+            <p><strong>Požadavky ke zkoušce.</strong>
                Zkouška je písemná, její obsah odpovídá sylabu. Studenti řeší 4 úlohy, z toho
                (A) 2 úlohy z numerických metod pro úlohy lineární algebry a
                (B) 2 úlohy z numerických metod pro úlohy matematické analýzy.
@@ -160,9 +328,10 @@
           <!-- /about content -->
 
         </div>
+        <!-- /column -->
 
       </div>
-      <!-- row -->
+      <!-- /row -->
     </div>
     <!-- /container -->
   </div>
@@ -177,7 +346,7 @@
         <!-- section title -->
         <div class="section-title">
           <h3 class="title"><span>Přednášející</span> <span style="color: #dd0a37;">a cvičící</span></h3>
-                        <p> <a href="http://knm.mff.cuni.cz" target=top>Katedra numerické matematiky</a> </p>
+          <p><a href="http://knm.mff.cuni.cz" target=top>Katedra numerické matematiky</a></p>
         </div>
         <!-- /section title -->
 
@@ -834,7 +1003,7 @@
         </div>
         <!-- /section title -->
 
-        <div class="col-md-10 col-md-offset-1 text-left">
+        <div class="col-md-10 col-md-offset-1 text-justify">
 
           <!-- about content -->
           <h3 class="event-title">Doporučená literatura</h3>
@@ -900,6 +1069,22 @@
   <script src="js/jquery.stellar.min.js"></script>
   <script src="js/jquery.countTo.js"></script>
   <script src="js/main.js"></script>
+
+  <!-- active popovers -->
+  <script>
+    $(document).ready(function () {
+        popoverOptions = {
+            content: function () {
+              return $('#delayed-exercise-content').html();
+            },
+            trigger: 'hover',
+            placement: 'auto',
+            html: true,
+            container: '.table',
+        };
+        $('.delayed-exercise').popover(popoverOptions);
+    });
+  </script>
 
 </body>
 
