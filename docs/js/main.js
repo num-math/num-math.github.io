@@ -11,6 +11,15 @@
 	$('.navbar-toggle').on('click',function() {
 		$('.main-nav').toggleClass('open');
 	});
+	$('.main-nav li').on('click',function() {
+		$('.main-nav').removeClass('open');
+	});
+	$(document).on('click touchstart', function(e) {
+		var clicked = $(e.target);
+		if (clicked.parents('#header').length === 0) {
+			$('.main-nav').removeClass('open');
+		}
+	});
 
 	// Fixed nav
 	$(window).on('scroll', function() {
