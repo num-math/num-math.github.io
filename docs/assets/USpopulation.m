@@ -1,7 +1,7 @@
 % populace v minulosti
 t = (1790:10:1990)';
 y = 100000*[39,53,72,96,129,171,231,314,386,502,629,760,920,1057,1228,1317,1507,1790,2050,2265,2487]';
-n = length(x);
+n = length(t);
 
 % vypočtení pravé strany b
 b = log(y);
@@ -30,5 +30,5 @@ legend('skutecna data', 'LS aproximace' )
 
 
 % populace v roce 2020
-y2020_skutecnost = 3331e5;
+y2020_skutecnost = 331.5e6;
 y2020_LS = "ZDE DOPLNTE VZOREC";
