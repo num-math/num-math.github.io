@@ -28,9 +28,8 @@ fprintf('|V^TV-I|_2 = %e,   |V^TV-I|_F = %e\n',a,b);
 fprintf('|AV-VH|_2   = %e,   |AV-VH|_F = %e\n',e,f);
 fprintf('\n');
 
-subplot(1,2,1), spy(V), title(sprintf('%s: matrix V','ArnoldiCGS'));
-subplot(1,2,2), spy(H), title(sprintf('%s: matrix H','ArnoldiCGS'));
-pause;
-subplot(1,1,1), surf(m1), title(sprintf('%s: V^TV-I','ArnoldiCGS'));
-pause;
-
+%subplot(1,2,1), spy(V), title(sprintf('%s: matrix V','ArnoldiCGS'));
+%subplot(1,2,2), spy(H), title(sprintf('%s: matrix H','ArnoldiCGS'));
+%pause;
+%subplot(1,1,1), surf(m1), title(sprintf('%s: V^TV-I','ArnoldiCGS'));
+%pause;
