@@ -31,7 +31,7 @@ The first two rewrite rules redirect `https://host/~<username>/znm` and
 
 The textual and graphical contents (in `docs/index.html`, `docs/img`, etc.)
 All rights reserved.
-(C) 2023 MFF UK
+(C) 2023–2024 MFF UK
 
 The HTML template CC BY 3.0 made with :heart: by [Colorlib](https://colorlib.com)
 
