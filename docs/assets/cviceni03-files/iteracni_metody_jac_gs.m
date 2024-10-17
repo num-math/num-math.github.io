@@ -61,7 +61,7 @@ T_jac_1norm = norm(T_jac,1);
 T_jac_Infnorm = norm(T_jac,Inf);
 T_jac_sp = max(abs(eig(T_jac)));
 
-T_gs = eye(n) - (diag(diag(A))+tril(A))\A;
+T_gs = eye(n) - tril(A)\A;
 T_gs_2norm = norm(T_gs);
 T_gs_1norm = norm(T_gs,1);
 T_gs_Infnorm = norm(T_gs,Inf);
