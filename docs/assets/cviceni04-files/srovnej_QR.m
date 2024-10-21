@@ -11,7 +11,7 @@ A_vse{3} = gallery ('chebvand', 10);
 
 %% Vypocet rozkladu
 
-pocet_rozkladu = 5;
+pocet_rozkladu = 4;
 
 for i = 1:pocet_matic
     A = A_vse{i};
@@ -27,11 +27,11 @@ for i = 1:pocet_matic
         ztrata_OG(2,i) = norm(Q'*Q-eye(n));  
         residuum(2,i) = norm(A-Q*R);                 
 %     [Q,R] = hh(A);
-%         ztrata_OG(4,i) = norm(Q'*Q-eye(n)); 
-%         residuum(4,i) = norm(A-Q*R);        
+%         ztrata_OG(3,i) = norm(Q'*Q-eye(n)); 
+%         residuum(3,i) = norm(A-Q*R);        
     [Q,R] = givens(A); 
-        ztrata_OG(5,i) = norm(Q'*Q-eye(n));  
-        residuum(5,i) = norm(A-Q*R);         
+        ztrata_OG(4,i) = norm(Q'*Q-eye(n));  
+        residuum(4,i) = norm(A-Q*R);         
 
 end
 
@@ -62,8 +62,8 @@ for i = 1:pocet_matic
     fprintf(['***  ', jmeno ,' - ztrata ortogonality \n']);
     fprintf('CGS:    |Q^TQ-I|_2 = %e, ocekavani = %.1e  \n', ztrata_OG(1,i), OCEKAVANI_CGS);
     fprintf('MGS:    |Q^TQ-I|_2 = %e, ocekavani = %.1e  \n', ztrata_OG(2,i), OCEKAVANI_MGS);
-%     fprintf('HH:     |Q^TQ-I|_2 = %e, ocekavani = %.1e  \n', ztrata_OG(4,i), OCEKAVANI_HH);
-    fprintf('Givens: |Q^TQ-I|_2 = %e, ocekavani = %.1e  \n\n', ztrata_OG(5,i), OCEKAVANI_Givens);
+%     fprintf('HH:     |Q^TQ-I|_2 = %e, ocekavani = %.1e  \n', ztrata_OG(3,i), OCEKAVANI_HH);
+    fprintf('Givens: |Q^TQ-I|_2 = %e, ocekavani = %.1e  \n\n', ztrata_OG(4,i), OCEKAVANI_Givens);
       
 end
 
