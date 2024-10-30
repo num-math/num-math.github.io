@@ -393,12 +393,37 @@
                   <td>
                     <div class="btn-group btn-group-sm" role="group">
                       <a class="btn btn-default" target="_blank" href="assets/cviceni05-zadani.pdf">zadání</a>
+                      <a class="btn btn-default" data-toggle="modal" data-target="#files-modal-05">soubory</a>
                       <a class="btn btn-default disabled" target="_blank" href="assets/cviceni05-reseni.pdf">řešení</a>
                     </div>
-                    <div class="btn-group btn-group-sm" role="group">
-                      <a class="btn btn-default" target="_blank" href="assets/cviceni05-files/USpopulation.m">soubor</a>
-                      <a class="btn btn-default" target="_blank" href="assets/cviceni05-files/lspoly.m">soubor (pro rychlejší)</a>
+
+                    <!-- files modal -->
+                    <div id="files-modal-05" class="speaker-modal modal fade">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <button type="button" class="speaker-modal-close" data-dismiss="modal"></button>
+                          <div class="modal-body">
+                            <div class="row">
+                              <div class="col-md-7">
+                                <div class="speaker-modal-content">
+                                  <h2 class="speaker-name">Soubory ke cvičení 5</h2> <br>
+                                  <ul class="list-group">
+                                    <a class="list-group-item" target="_blank" download href="assets/cviceni05-files/USpopulation.m">USpopulation.m</a>
+                                    <a class="list-group-item" target="_blank" download href="assets/cviceni05-files/lspoly.m">lspoly.m</a>
+                                  </ul>
+                                  <span class="speaker-job">archiv se všemi soubory</span>
+                                  <ul class="list-group">
+                                    <a class="list-group-item" target="_blank" download href="assets/cviceni05-files.zip">cviceni05-files.zip</a>
+                                  </ul>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                     </div>
+                    <!-- /files modal -->
+
                   </td>
                   <td>
                      <div class="btn-group btn-group-sm" role="group">
