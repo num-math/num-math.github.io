@@ -11,7 +11,7 @@ v0 = [1,1,1,1]';
 % pocet iteraci
 niter = 35;
 
-[mu,v,res_2norm] = power_method_reseni(A,v0,niter); 
+[mu,v,res_2norm] = power_method(A,v0,niter); 
 
 err_eigval = nan(1,size(v,2)); err_eigvec = nan(1,size(v,2)); % inicializace
 [eigvec_dom,eigval_dom] = eigs(A,1);    % dominantni vlastni cislo spoctene Matlabem
