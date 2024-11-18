@@ -17,5 +17,3 @@ for i = 1:n
         Q(:,i) = z/R(i,i);
     end
 end
-
-plotqr(A,Q,R,'cgs');

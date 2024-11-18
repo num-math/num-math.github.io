@@ -9,9 +9,9 @@ norm(A-A')                               % overeni symetrie
 
 x = rand(100,1);                         % startovni vektor
 
-% Konstrukce báze K_10(A, x) Arnoldiho procesem
+% Konstrukce bÃ¡ze K_10(A, x) Arnoldiho procesem
 
 [V,H] = Arnoldimgs(A,x,10);              % OG dobre zachovana
 
-% Jsou koeficienty v pravém horním rohu H nulové?
-% Vytvoøte z H ètvercovou matici a ovìøte její symetrii pomocí normy
+% Jsou koeficienty v pravÃ©m hornÃ­m rohu H nulovÃ©?
+% VytvoÃ¸te z H Ã¨tvercovou matici a ovÃ¬Ã¸te jejÃ­ symetrii pomocÃ­ normy
