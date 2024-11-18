@@ -1,7 +1,7 @@
 function [V,H] = Arnoldimgs(A,s,m)
 
 V = zeros(length(s),m);
-H = zeros(m, m+1);
+H = zeros(m, m-1);
 
 V(:,1) = s/norm(s);
 for i = 1:m-1
