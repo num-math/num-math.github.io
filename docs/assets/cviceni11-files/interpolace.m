@@ -1,77 +1,75 @@
-% porovnání iterpolace Lagrange rovnomerne deleni, Lagrange Chebyshevovy
-% body, kubicky spline
-
-close all; clear all;
+clear, clc, close all; % vymazani promennych, vymazani Command window, zavreni obrazku
 
 % interpolovana funkce
  f = @(x) sin(3*x); 
 % f = @(x) abs(x); 
-%f = @(x) sign(x);
+% f = @(x) sign(x);
 
+% uvazovan� interval
 a = -1;
 b = 1;
+r = linspace(a,b,100);
 
-n = 5;     % pocet uzlu
-
-vykresliChybuLagrangeRovnomerne = false;
-vykresliChybuLagrangeChebyschev = true;
-vykresliChybuSpline = true;
-
-
-bodyVykresleni = linspace(a,b,500);
-funkcniHodnotyVykresleni = f(bodyVykresleni);
-bodyRovnomerneDeleni = linspace(a,b,n);  
-funkcniHodnotyRovnomerneDeleni = f(bodyRovnomerneDeleni);           
-bodyChebyshev = cos((2*(0:n-1)+1).*(pi/(2*n)));
-funcniHodnotyChebyshev = f(bodyChebyshev);
-
-lagrangeRovnomerneDeleni = lagrange(bodyRovnomerneDeleni,funkcniHodnotyRovnomerneDeleni,bodyVykresleni);
-lagrangeChebyshev = lagrange(bodyChebyshev,funcniHodnotyChebyshev,bodyVykresleni);
-splineRovnomerneDeleni = spline(bodyRovnomerneDeleni,funkcniHodnotyRovnomerneDeleni,bodyVykresleni);
-
-barvy = lines(6);
-
-figure
-subplot(221)
-plot(bodyRovnomerneDeleni,funkcniHodnotyRovnomerneDeleni,LineStyle="none",Marker="x",MarkerSize=10,Color="red"); 
-hold on
-plot(bodyVykresleni,funkcniHodnotyVykresleni,LineStyle="--",LineWidth=2,Color=barvy(1,:)); 
-hold on
-plot(bodyVykresleni,lagrangeRovnomerneDeleni,LineWidth=2,Color=barvy(2,:));
-title(sprintf('Lagrangeova interpolace, rovnomerne deleni s %i uzly', n))
+k = 5;                     % pocet uzlu
+x = (a:((b-a)/(k-1)):b)' ;  % uzly rovnomerneho deleni
+y = f(x);                   % hodnoty interpolovane fce v uzlech
 
 
-subplot(222)
-plot(bodyChebyshev, funcniHodnotyChebyshev,LineStyle="none",Marker="x",MarkerSize=10,Color="red"); 
-hold on
-plot(bodyVykresleni,funkcniHodnotyVykresleni,LineStyle="--",LineWidth=2,Color=barvy(1,:)); 
-hold on
-plot(bodyVykresleni,lagrangeChebyshev,LineWidth=2,Color=barvy(3,:));
-title(sprintf('Lagrangeova interpolace v  %i  Chebyschevovych bodech', n))
+%% Lagrangeova interpolace na pravidelnem deleni
+
+lagr_pol = lagrangepoly(x,y);
+
+figure;
+subplot(221); hold on;
+title(sprintf('Lagrangeova interpolace, rovnomerne deleni s %i uzly', k))
+
+plot(r, f(r), 'k--');% vykresleni interpolovane fce
+plot(r,polyval(lagr_pol,r), 'b-', 'LineWidth', 2); % vykresleni Lagr. polynomu
+plot(x, y, 'r*');
+
+axis auto;
+hold off;
 
 
+%% Lagrangeova interpolace v Cebysevovych uzlech
 
-subplot(223)
-plot(bodyRovnomerneDeleni,funkcniHodnotyRovnomerneDeleni,LineStyle="none",Marker="x",MarkerSize=10,Color="red"); 
-hold on
-plot(bodyVykresleni,funkcniHodnotyVykresleni,LineStyle="--",LineWidth=2,Color=barvy(1,:)); 
-hold on
-plot(bodyVykresleni,splineRovnomerneDeleni,LineWidth=2,Color=barvy(4,:)); % vykresleni interpolacniho splinu
-title(sprintf('Interpolace kubickym splinem, rovnomerne deleni s %i uzly', n))
+% tzv. Cebysevovy uzly - soustredene vice ke krajum intervalu
+x_cheb = (cos(pi* (2*(1:k) - 1)/(2*k)))';
+y_cheb = f(x_cheb);
+
+lagr_pol_cheb = lagrangepoly(x_cheb,y_cheb);
+
+subplot(222); hold on;
+plot(r, f(r), 'k--');     % vykresleni interpolovane fce
+plot(r,polyval(lagr_pol_cheb,r), 'b-', 'LineWidth', 2); % vykresleni Lagr. polynomu
+plot(x_cheb, y_cheb, 'r*');
+
+title(sprintf('Lagrangeova interpolace v %i Cebysevovych bodech', k))
+axis auto;
+hold off;
 
 
-subplot(224);
-if (vykresliChybuLagrangeRovnomerne)
-    plot(bodyVykresleni, lagrangeRovnomerneDeleni - funkcniHodnotyVykresleni,LineWidth=2,Color=barvy(2,:),LineStyle="-",DisplayName='Lagrange (rovn.)');
-    hold on
-end
-if (vykresliChybuLagrangeChebyschev)
-    plot(bodyVykresleni, lagrangeChebyshev - funkcniHodnotyVykresleni,LineWidth=2,Color=barvy(3,:),LineStyle="--",DisplayName='Lagrange (Cheb.)');
-    hold on
-end
-if(vykresliChybuSpline)
-    plot(bodyVykresleni,splineRovnomerneDeleni - funkcniHodnotyVykresleni,LineWidth=2,Color=barvy(4,:),LineStyle=":",DisplayName='spline (rovn.)');
-end
+%% Interpolace pomoci kubickeho splinu
+
+spline_pol = spline(x,y); % vestavena fce v MATLABu
+
+subplot(223); hold on; 
+plot(r, f(r), 'k--');% vykresleni interpolovane fce
+plot(r,ppval(spline_pol,r), 'b-', 'LineWidth', 2); % vykresleni interpolacniho splinu
+plot(x, y, 'r*');
+
+title(sprintf('Interpolace kubickym splinem, rovnomerne deleni s %i uzly', k))
+axis auto;
+hold off;
+
+
+%% Chyba jednotlivych interpolaci
+
+subplot(224);  hold on;
+plot(r,polyval(lagr_pol,r) - f(r), 'r-', 'LineWidth', 2);
+plot(r,ppval(spline_pol,r) - f(r), 'b--', 'LineWidth', 2);
+plot(r,polyval(lagr_pol_cheb,r) - f(r), 'k-.', 'LineWidth', 2);
 title('Chyby jednotlivych interpolaci')
-legend();
 
+legend('Lagrange (rovn.)', 'spline (rovn.)', 'Lagrange (Cheb.)');
+hold off;
