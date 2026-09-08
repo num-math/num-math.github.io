@@ -501,12 +501,12 @@ textarea.input {
 }
 
 .speaker .speaker-img>img {
-  width: 100%
+  width: 100%;
 }
 
 .speaker .speaker-body {
   position: absolute;
-  bottom: 60px;
+  top: 220px;
   left: 0;
   right: 0;
 }
@@ -514,7 +514,7 @@ textarea.input {
 .speaker .speaker-content {
   position: relative;
   padding: 30px;
-  background: #dd0a37;
+  background: #dd0a3790;
   text-align: right;
   z-index: 20;
 }
